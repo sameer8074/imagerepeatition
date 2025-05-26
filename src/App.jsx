@@ -33,10 +33,8 @@ function App() {
           path="/image/:galleryId/:imageIndex"
           element={<ImageDetail />}
         />
-        <Route
-          path="/product"
-          element={<Product/>} // ✅ added this route
-        />
+               <Route path="/product/:productId" element={<Product />} />
+
       </Routes>
 
       {isHomePage && <Footer />}

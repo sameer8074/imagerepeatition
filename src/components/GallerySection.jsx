@@ -11,6 +11,7 @@ const GallerySection = ({ title, effectText, images, galleryId, autoScroll = fal
     }
   }, [autoScroll]);
 
+  
   return (
     <div ref={sectionRef} className="w-full px-4 sm:px-6 py-8 mt-12 sm:py-10">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-2">
@@ -21,7 +22,7 @@ const GallerySection = ({ title, effectText, images, galleryId, autoScroll = fal
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2">
         {images.map((img, index) => (
           <Link
-            to={`/image/${galleryId}/${index}`}
+            to={`/product/${galleryId}-${index}`}
             key={index}
             className="text-center block"
           >

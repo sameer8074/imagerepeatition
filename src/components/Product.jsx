@@ -37,8 +37,13 @@ export default function Product() {
     return () => window.removeEventListener("keydown", handleKeyPress);
   }, []);
 
-  useEffect(() => {
+useEffect(() => {
+  const originalBg = document.body.style.backgroundColor;
   document.body.style.backgroundColor = layout === 1 ? 'white' : '#111';
+
+  return () => {
+    document.body.style.backgroundColor = originalBg; // restore original color on unmount
+  };
 }, [layout]);
 
   const layoutStyles = [
