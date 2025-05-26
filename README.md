@@ -11,6 +11,11 @@ This project is a ** React clone** of the [Codrops Repeating Image Transition De
 - Includes a responsive navbar, footer, and layout consistent with the Codrops demo.
 - Smooth animations and image transitions using CSS.
 - Section-based layout with auto-scroll feature.
+- Theme switching using keyboard shortcut (Alt+Q).
+- Image upload with preview.
+- Product type selection (T-shirt, Hoodie, Sleeve, Cap).
+- Input fields for height, weight, build, and custom text.
+- Responsive layout with theme-based styling using Tailwind CSS.
 
 ---
 
@@ -26,25 +31,6 @@ This project is a ** React clone** of the [Codrops Repeating Image Transition De
 
 ---
 
-## 🧱 Folder Structure
-
-src/
-├── components/
-│ ├── Navbar.jsx # Top navigation with external links and branding
-│ ├── GallerySection.jsx # Individual gallery blocks
-│ ├── ImageDetail.jsx # Full-screen image view on click
-│ └── Footer.jsx # Bottom credits
-│
-├── data/
-│ └── images.js # Contains gallery image data
-│
-├── App.jsx # Routes and page structure
-├── index.js # ReactDOM entry
-└── styles/
-└── index.css # Tailwind + custom animations
-
----
-
 ## 📦 Installation
 
 ```bash
@@ -52,3 +38,24 @@ git clone https://github.com/your-username/repeating-image-transition
 cd repeating-image-transition
 npm install
 npm start
+
+---
+
+## Deplyment steps 
+
+```
+1) Push your code to a Git repository (GitHub, GitLab, or Bitbucket).
+
+2) Go to Cloudflare Pages.
+
+3) Create a new project and connect your repository.
+
+4) Set the build command to:
+   npm run build
+5) Set the build output directory to:
+   Deploy the site.
+
+6) Your app will be live at https://your-project.pages.dev (Cloudflare provides this URL).
+
+
+      
