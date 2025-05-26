@@ -14,7 +14,7 @@ const GallerySection = ({ title, effectText, images, galleryId, autoScroll = fal
   return (
     <div ref={sectionRef} className="w-full px-4 sm:px-6 py-8 mt-12 sm:py-10">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 gap-2">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold">{title}</h2>
+        <h2 className="text-4xl sm:text-4xl md:text-5xl font-extrabold">{title}</h2>
         <p className="text-xs sm:text-sm md:text-right font-semibold text-gray-700">{effectText}</p>
       </div>
 

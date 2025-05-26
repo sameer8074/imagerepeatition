@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
+import { Listbox } from '@headlessui/react';
+import { Fragment } from 'react';
 
 const themes = [
   {
@@ -49,6 +51,8 @@ export default function TshirtCustomizerApp() {
   const [image, setImage] = useState(null);
   const [themeIndex, setThemeIndex] = useState(0);
   const [productType, setProductType] = useState("T-shirt");
+const builds = ["Lean", "Regular", "Athletic", "Big"];
+const [selectedBuild, setSelectedBuild] = useState("Athletic");
 
   const query = useQuery();
   const queryImage = query.get("img");
@@ -206,16 +210,42 @@ export default function TshirtCustomizerApp() {
           </div>
 
           <div>
-            <label className={`block mb-1 ${currentTheme.classes.label}`}>Build</label>
-            <select
-              {...register("build", { required: true })}
-              className={`w-full p-2 ${currentTheme.classes.input}`}
-            >
-              <option value="lean">Lean</option>
-              <option value="reg">Regular</option>
-              <option value="athletic">Athletic</option>
-              <option value="big">Big</option>
-            </select>
+            <div>
+  <div>
+  <label className={`block mb-1 ${currentTheme.classes.label}`}>
+    Build
+  </label>
+  <Listbox value={selectedBuild} onChange={setSelectedBuild}>
+    <div className="relative mt-1">
+      {/* Dropdown Button */}
+      <Listbox.Button
+        className={`w-full p-2 text-left border rounded-md ${currentTheme.classes.input}`}
+      >
+        {selectedBuild}
+      </Listbox.Button>
+
+      {/* Dropdown Options */}
+      <Listbox.Options className="absolute z-10 mt-1 w-full bg-white border border-gray-300 rounded-md shadow-lg">
+        {builds.map((build) => (
+          <Listbox.Option
+            key={build}
+            value={build}
+            className={({ active }) =>
+              `px-4 py-2 cursor-pointer text-left ${
+                active ? 'bg-red-100 text-red-800' : 'text-black'
+              }`
+            }
+          >
+            {build}
+          </Listbox.Option>
+        ))}
+      </Listbox.Options>
+    </div>
+  </Listbox>
+</div>
+
+</div>
+
           </div>
 
           <div>
