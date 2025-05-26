@@ -21,7 +21,7 @@ const GallerySection = ({ title, effectText, images, galleryId, autoScroll = fal
       <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2">
         {images.map((img, index) => (
           <Link
-            to={`/customizer?img=${encodeURIComponent(img.src)}`}
+            to={`/image/${galleryId}/${index}`}
             key={index}
             className="text-center block"
           >

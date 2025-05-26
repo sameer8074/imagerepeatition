@@ -7,6 +7,7 @@ import GallerySection from './components/GallerySection';
 import ImageDetail from './components/ImageDetail';
 import Footer from './components/Footer';
 import TshirtCustomizerApp from './components/TshirtCustomiserApp';
+import Product from './components/Product';
 
 function App() {
   const location = useLocation();
@@ -33,8 +34,8 @@ function App() {
           element={<ImageDetail />}
         />
         <Route
-          path="/customizer"
-          element={<TshirtCustomizerApp/>} // ✅ added this route
+          path="/product"
+          element={<Product/>} // ✅ added this route
         />
       </Routes>
 
